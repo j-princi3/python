@@ -1,0 +1,3 @@
+101,Hari,waterworks,12000
+102,Princi,software,1.2lakh
+103,darshini,software,1.3lakh
