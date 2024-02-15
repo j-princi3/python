@@ -1,6 +1,4 @@
-## Contributing Changes
-
-### For C++ Branch (Data Structure)
+### For C++ Branch (learnt Data Structure)
 
 1. **Make Changes**: Ensure your changes are relevant to the C++ branch, particularly focusing on data structures.
 
@@ -19,7 +17,7 @@
     git push origin c++
     ```
 
-### For Python Branch (Data Analysis)
+### For Python Branch (learnt basics of Data Analysis)
 
 1. **Make Changes**: Ensure your changes are relevant to the Python branch, particularly focusing on data analysis.
 
