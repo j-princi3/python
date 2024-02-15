@@ -1,0 +1,129 @@
+/* 
+Write a CPP program to find the 
+first occurrence and last occurrence of an array using recursion
+
+Hint:
+
+take array as {4,2,1,2,2,7} print the first and last ocurrence of 2
+
+Sample Output:
+
+first occurrence is                                                                                                     
+1                                                                                                                       
+last occurrence is                                                                                                      
+4                                                                                                                       
+ 
+*/
+
+/*
+Write a CPP Program to perferm sum till n numbers using recursion
+
+Sample Input-Output:
+enter n:                                                                                                                
+4                                                                                                                       
+sum is:10
+
+*/
+
+
+/*
+Write a C++ Program to print numbers in 
+increasing and decreasing order using recursion
+Hint: give the value of n
+
+sample input-output:
+enter the value of n:5                                                                                                  
+Decreasing order:                                                                                                       
+5                                                                                                                       
+4                                                                                                                       
+3                                                                                                                       
+2                                                                                                                       
+1                                                                                                                       
+Increasing order:                                                                                                       
+1                                                                                                                       
+2                                                                                                                       
+3                                                                                                                       
+4                                                                                                                       
+5                                                                                                                      
+
+*/
+
+/*
+Write a C++ program to check whether array is sorted or not.
+HINT:Initialize array with {1,6,3,4,5} and check whether an array is 
+sorted or not, return 1 if sorted else 0. 
+
+SAMPLE OUTPUT:0
+
+*/
+
+
+
+--------------------------------------------------------------------
+/*
+Write a c++ program to read n elements in array and 
+print max element till ith position
+
+
+Hint::
+
+   read n elements in array and take a temporary variable intialize
+   it to zero then read elements from array and compare each element
+   with temporary variable which is greater store it in temporary variable 
+   repeat it till end of the loop
+
+sample  input:
+6
+0 -9 1 3 -4 5
+sample output:
+0
+0
+1
+3
+3
+5
+*/  
+
+/*
+Write a C++ program to find the length of a 
+longest arithmetic subarray
+
+SAMPLE INPUT/OUTPUT:
+Number of elements:5                                                                                                    
+Array elements:                                                                                                         
+3 4 5 6 7                                                                                                               
+longest arithmetic subarray length:4                                                                                    
+
+Number of elements:5                                                                                                    
+Array elements:                                                                                                         
+6 8 10 15 16                                                                                                            
+longest arithmetic subarray length:2                                                                                    
+
+*/
+
+/*
+write a c++ program to find the sum of all possible sub arrays
+Sample Input-Output:
+give array size:                                                                                                        
+2                                                                                                                      
+Array elements are:                                                                                                     
+3                                                                                                                       
+2                                                                                                                       
+index from 0 to 0 sum is 3                                                                                              
+index from 0 to 1 sum is 5                                                                                              
+index from 1 to 1 sum is 2 
+*/
+
+/*Print all subsequences of a string
+
+SAMPLE INPUT/OUTPUT:
+Enter a string: abc
+abc
+ab
+ac
+a
+bc
+b
+c
+
+*/

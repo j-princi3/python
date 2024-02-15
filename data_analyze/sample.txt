@@ -1,4 +1,0 @@
-Hello this is an example text file
-You can add more lines here
-Feel free to modify it as needed welcome welcome
-import os
