@@ -2,7 +2,7 @@
 using namespace std;
 class binaryTree{
     public:
-    int arr[20];
+    int arr[5];
     int top=0;
     binaryTree(int d){
         arr[0]=d;
@@ -55,10 +55,10 @@ int main(){
     b->setRight(14,1);
     b->setLeft(12,2);
     b->print();
-    b->insertmaxHeap(81);
-    b->insertmaxHeap(108);
-    b->insertmaxHeap(18);
-    b->insertminHeap(1);
+    // b->insertmaxHeap(81);
+    // b->insertmaxHeap(108);
+    // b->insertmaxHeap(18);
+    // b->insertminHeap(1);
     b->print();
 }
 

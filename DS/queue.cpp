@@ -4,118 +4,188 @@
 // iii)Queue implementation using two stacks.
 // iv)Check if a queue can be sorted into another queue using a stack
 
+// #include <iostream>
+
+// using namespace std;
+
+// const int MAX_SIZE = 100; // Maximum size of the queue
+
+// class Queue {
+// private:
+//     int items[MAX_SIZE];
+//     int front, rear;
+
+// public:
+//     Queue() {
+//         front = -1; // Initialize queue as empty
+//         rear = -1;
+//     }
+
+//     bool is_empty() {
+//         return front == -1;
+//     }
+
+//     bool is_full() {
+//         return (rear + 1) % MAX_SIZE == front;
+//     }
+
+//     void enqueue(int item) {
+//         if (!is_full()) {
+//             if (is_empty()) {
+//                 front = 0;
+//                 rear = 0;
+//             } else {
+//                 rear = (rear + 1) % MAX_SIZE;
+//             }
+//             items[rear] = item;
+//         } else {
+//             cout << "Queue is full. Cannot enqueue more items." << endl;
+//         }
+//     }
+
+//     int dequeue() {
+//         if (!is_empty()) {
+//             int front_item = items[front];
+//             if (front == rear) {
+//                 front = -1;
+//                 rear = -1;
+//             } else {
+//                 front = (front + 1) % MAX_SIZE;
+//             }
+//             return front_item;
+//         } else {
+//             cout << "Queue is empty" << endl;
+//             return -1; // Return a default value indicating failure
+//         }
+//     }
+
+//     int peek() {
+//         if (!is_empty()) {
+//             return items[front];
+//         } else {
+//             cout << "Queue is empty" << endl;
+//             return -1; // Return a default value indicating failure
+//         }
+//     }
+
+//     int size() {
+//         if (is_empty()) return 0;
+//         return (rear - front + MAX_SIZE) % MAX_SIZE + 1;
+//     }
+// };
+
+// int main() {
+//     Queue queue;
+
+//     queue.enqueue(1);
+//     queue.enqueue(2);
+//     queue.enqueue(3);
+
+//     cout << "Current queue:";
+//     int size = queue.size();
+//     for (int i = 0; i < size; ++i) {
+//         cout << " " << queue.peek();
+//         queue.dequeue();
+//     }
+//     cout << endl;
+
+//     cout << "Size: " << queue.size() << endl;
+
+//     return 0;
+// }
+
+
 #include <iostream>
+
 using namespace std;
 
-class Queue{
-    public:
-    int size=5;
-    int *arr;
-    int rear=-1;
-    int front =-1;
-    Queue(){
-        int *arr=new int[size];
-    }
-    void enqueue(int d){
-        if (rear==size-1){
-            cout<<"queue is full"<<endl;
-        }
-        else{
-            rear++;
-            arr[rear]=d;
-            if(front==-1){
-                front++;
-            }
-        }
-    }
-    void dequeue(){
-        if(front==-1){
-            cout<<"Queue is empty"<<endl;
-        }
-        else{
-            front++;
-        }
-    }
-    void print(){
-        int i=front;
-        while(i<= rear){
-            cout<<arr[i]<<" ";
-            i++;
-        }
-        cout<<endl;
+// Node class to represent each element in the linked list
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int val) {
+        data = val;
+        next = nullptr;
     }
 };
 
-class CircularQueue {
-    int size = 5;
-    int *arr;
-    int front = -1;
-    int rear = -1;
+class Queue {
+private:
+    Node* front;
+    Node* rear;
+
 public:
-    CircularQueue() {
-        arr = new int[size];
+    Queue() {
+        front = nullptr;
+        rear = nullptr;
     }
 
-    void enqueue(int d) {
-        if (front == (rear + 1) % size) {
-            cout << "Queue is full" << endl;
+    bool is_empty() {
+        return front == nullptr;
+    }
+
+    void enqueue(int item) {
+        Node* newNode = new Node(item);
+        if (is_empty()) {
+            front = newNode;
+            rear = newNode;
         } else {
-            if (front == -1) {
-                front = 0;
-            }
-            rear = (rear + 1) % size;
-            arr[rear] = d;
+            rear->next = newNode;
+            rear = newNode;
         }
     }
 
-    void dequeue() {
-        if (front == -1 && rear == -1) {
+    int dequeue() {
+        if (is_empty()) {
             cout << "Queue is empty" << endl;
+            return -1; // Return a default value indicating failure
         } else {
-            if (front == rear) {
-                front = -1;
-                rear = -1;
-            } else {
-                front = (front + 1) % size;
-            }
+            Node* temp = front;
+            int front_item = temp->data;
+            front = front->next;
+            delete temp;
+            return front_item;
         }
     }
 
-    void print() {
-        if (front == -1 && rear == -1) {
+    int peek() {
+        if (is_empty()) {
             cout << "Queue is empty" << endl;
-            return;
+            return -1; // Return a default value indicating failure
+        } else {
+            return front->data;
         }
-
-        int i = front;
-        do {
-            cout << arr[i] << " ";
-            i = (i + 1) % size;
-        } while (i != (rear + 1) % size);
-
-        cout << endl;
     }
 
-    ~CircularQueue() {
-        delete[] arr;
+    int size() {
+        int count = 0;
+        Node* current = front;
+        while (current != nullptr) {
+            count++;
+            current = current->next;
+        }
+        return count;
     }
 };
 
 int main() {
-    CircularQueue *q = new CircularQueue();
-    q->enqueue(5);
-    q->enqueue(7);
-    q->enqueue(8);
-    q->enqueue(9);
-    q->enqueue(1);
-    // q->enqueue(2);  // Uncomment this line to test enqueue when the queue is full
-    q->dequeue();
-    q->dequeue();
-    q->dequeue();
+    Queue queue;
 
-    // q->enqueue(2);
-    q->print();
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
 
-    delete q;  // Don't forget to free the memory allocated for the queue
+    cout << "Current queue:";
+    int size = queue.size();
+    for (int i = 0; i < size; ++i) {
+        cout << " " << queue.peek();
+        queue.dequeue();
+    }
+    cout << endl;
+
+    cout << "Size: " << queue.size() << endl;
+
     return 0;
 }

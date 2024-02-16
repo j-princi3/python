@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <stack>
+
 using namespace std;
 
 class graph {
@@ -22,24 +24,48 @@ public:
     }
 
     void bfs(int fro) {
-        if (vertex.empty()) {
-            return;
-        }
-        for (int i = 0; i < arr[fro].size(); i++) {
-            if (!visit[arr[fro][i]]) {
-                vertex.push(arr[fro][i]);
-                visit[arr[fro][i]] = true;
+        queue<int> q;
+        q.push(fro);
+        visit[fro] = true;
+        while (!q.empty()) {
+            int v = q.front();
+            cout << v << " ";
+            q.pop();
+            for (int i = 0; i < arr[v].size(); i++) {
+                if (!visit[arr[v][i]]) {
+                    q.push(arr[v][i]);
+                    visit[arr[v][i]] = true;
+                }
             }
         }
+    }
+
+    void dfs(int fro) {
+        stack<int> st;
+        st.push(fro);
+        visit[fro] = true;
         cout << fro << " ";
-        vertex.pop();
-        bfs(vertex.front());
+        while (!st.empty()) {
+            int v = st.top();
+            st.pop();
+            for (int i = 0; i < arr[v].size(); i++) {
+                if (!visit[arr[v][i]]) {
+                    st.push(arr[v][i]);
+                    visit[arr[v][i]] = true;
+                    cout << arr[v][i] << " ";
+                }
+            }
+        }
     }
 
     void print(int index) {
         for (int i = 0; i < arr[index].size(); i++) {
             cout << arr[index][i] << " ";
         }
+    }
+
+    ~graph() {
+        delete[] visit; // Deallocate memory for the visit array
     }
 };
 
@@ -65,8 +91,16 @@ int main() {
     g->insertAsEdge(5, 6);
 
     g->insertAsEdge(6, 5);
-    g->print(4);
+
+    cout << "DFS traversal: ";
+    g->dfs(0);
+    cout << endl;
+
+    fill(g->visit, g->visit + 7, false); // Reset visit array for BFS
+
+    cout << "BFS traversal: ";
     g->bfs(0);
+    cout << endl;
 
     delete g; // Deallocate memory
     return 0;
