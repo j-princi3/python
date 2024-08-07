@@ -1,0 +1,581 @@
+Consider the following code inside Account.java file:
+class Account {
+             double balance;
+
+             public static void main(String[] args) {
+                         Account account1=null; //Line1
+                         Account account2=null; //Line2
+                         account1 = new Account(); // Line 3
+                         account2 = new Account(); //Line 4
+                         account2 = account1; //Line 5
+                         account1 = new Account(); // Line 6
+            System.out.println(account1.balance);
+
+            }
+}
+Which of the following statement is true after executing line 6?
+Select one:
+a. account1 and account2 are pointing to the different object
+b. account1 is pointing to two different object at the same time
+c. account2 is pointing to two different object at the same time
+d. account1 and account2 are pointing to the same object
+
+//
+
+What would be the output when the following code is compiled/executed?
+class Demo{
+              Demo (int i){
+                            System.out.println(i);
+                            this.i = i;
+              }
+              public static void main(String[] args){
+                          Demo obj = new Demo(10);
+              }
+}
+Select one:
+a. null
+b. Compile error "No variable i defined in class ABC
+c. 10
+d. 0
+
+//
+
+What will be the output of the following code snippet?
+class Loan{
+             Loan(int x){
+                         System.out.println("Request for loan");
+             }
+}
+class HomeLoan extends Loan{
+              HomeLoan(){
+                                System.out.println("Request for HomeLoan");
+              }
+              public static void main(String[] args){
+                          HomeLoan obh=new HomeLoan();
+              }
+}
+Select one:
+a. Request for loan
+b. Runtime exception
+c. Executes successfully, with no output displayed
+d. Compilation error: Implicit super constructor Loan() is undefined. Another constructor must be invoked explicitly.
+
+//
+
+Given:
+int i = 1,j = 10;
+                      do {
+                               if(i>j) {
+                                        break;
+                                }
+                                j--;
+                    } while (++i <5);
+                   System.out.println("i =" +i+" and j = "+j);
+What is the result?
+Select one:
+a. i = 5 and j = 6
+b. i = 6 and j = 4
+c. i = 5 and j = 5
+d. i = 6 and j = 5
+
+//
+
+class JavaApplication {
+             public static void main(String[] args){
+                         boolean a= true;
+                         boolean b=!true;
+                         boolean c= a|b;
+                         boolean d=a&b;
+                         boolean e= d?b:c;
+                         System.out.println(d+""+e);
+            }
+}
+What happens, when the program executes?
+Select one:
+a. true false
+b. false
+c. true true
+d. false true
+
+//
+
+Consider the following code inside Bank.java file:
+class Bank {
+             String bankName, area, phoneNo;
+
+             public static void main(String[] args) {
+                         Bank bank = new Bank();
+                         System.out.println(bank.bankName);
+             }
+}
+Select one:
+a. Compile time error as the constructor is not provided
+b. null
+c. Runtime exception as none of the variables are initialized
+d. Executes successfully with no output
+
+//
+
+Which of the following are valid array declarations/definitions?
+
+1: int[5] myArray1;
+2: int[] myArray2;
+3: int[] myArray3 = new int[5];
+4: int[5] myArray4 = new int[5];
+5: int []myArray5 = new int[5];
+6: int[] myArray6 = new int[];
+7: int[] myArray7 = null;
+Select one:
+a. 3,4,5,7
+b. 1,2,3,6
+c. 2,4,5,7
+d. 2,3,5,7
+
+//
+
+Consider the following code inside Demo.java file
+class Demo{
+
+              public static void main(String[] args) {
+              int x=200;
+              int y=x;
+              x++;
+              int z=y;
+              z++;
+              System.out.println(y);
+              }
+}
+What happens, when the program executes?
+Select one:
+a. 101
+b. 200
+c. 0
+d. 102
+
+//
+
+What is the output of the following code snippet?
+class Person{
+             String name;
+             Person(){
+           System.out.println("In Person class");
+       }
+}
+class Student extends Person{
+             Student(){
+           System.out.println("In Student class");
+      }
+             int id;
+             public static void main(String[] a){
+                          Student ob=new Student(); //Line 1
+                          ob.name="abc"; //Line 2
+                          ob.id=123;}
+}
+Select one:
+a. In Student class
+b. Compilation error in Line 2
+c. In Person class In Student class
+d. In Student class In Person class
+
+//
+
+Consider the following code inside Bank.java file:
+class Bank{
+              String bankName;
+              Bank(){
+                          bankName="TrustBank";
+              }
+}
+
+Choose the correct option for the above code.
+Select one:
+a. Not a valid constructor declaration. As constructor should take some arguments
+b. Not a valid constructor. As it is having same name as class
+c. Code snippet is fine
+d. Not a valid Constructor declaration. As constructor is also a method it should have return type associated with it
+
+//
+
+What will be the output of the following code?
+class Demo{
+               int i;
+               Demo(int i){
+                             System.out.println(i);
+                             this.i = i;
+               }
+               public static void main(String[] args){
+                            Demo obj = new Demo(10);
+                            System.out.println(obj.i);
+               }
+}
+Select one:
+a. 10 10
+b. 0 10
+c. Compilation error, instance variable “i” is not initialized
+d. 10 0
+
+//
+
+What will be the output when we execute the following code snippet?
+public class Bank{
+       String bankName;
+       String area;
+       String phoneNo;
+       public static void main(String[] args){
+              Bank bank2=new Bank("abc","xyz","pqr");
+              System.out.println(bank2.bankName);
+              System.out.println(bank2.area);
+
+        }
+        Bank(String bankName,String area,String phoneNo){
+                 bankName=bankName;
+                 this.area=area;
+        }
+}
+Select one:
+a. null xyz
+b. abc null
+c. abc xyz
+d. null null
+
+//
+
+Consider the following code inside Demo.java file
+
+class Demo{
+
+              public static void main(String[] args){
+                          int m = 1;
+              int n = ++m + m++ + --m;
+              System.out.println(n);
+              }
+}
+What happens, when the program executes?
+Select one:
+a. 7
+b. 8
+c. 5
+d. 6
+
+//
+
+Consider the following code inside Bank.java file:
+class Bank{
+              String name;
+              int createAccount(int accountNo,String accountHolderName){
+                          String name;
+                          int i=10;
+                          name= accountHolderName; // Line 5
+                          return i;
+              }
+}
+In method createAccount at Line 5. What is the scope of the variable “name”?
+Select one:
+a. static variable
+b. local variable
+c. class variable
+d. instance variable
+
+//
+
+Consider the following class inside DelhiOffice.java file
+abstract class Bank {
+          private String bankName;
+    Bank(String bankName) {
+                     this.bankName = bankName;
+             }
+         public String getBankName() {
+                      return bankName;
+         }
+}
+class DelhiOffice extends Bank {
+              DelhiOffice() {
+                           super("Axis Bank");
+               }
+               public static void main(String[] args) {
+                           Bank bank = new DelhiOffice();
+                           System.out.println(bank.getBankName());
+               }
+}
+What will happen after compilation of the code?
+Select one:
+a. Compilation error will occur because “abstract class cannot have constructor”
+b. Code will be compiled successfully
+c. Compilation error will occur because “abstract class must have an abstract method”
+d. Compilation error will occur while invoking the super class constructor
+
+//
+
+What is the output of the following code snippet?
+class Person{
+             String name;
+             Person(){
+           System.out.println("In Person class");
+      }
+}
+class Student extends Person{
+            Student(){
+          System.out.println("In Student class");
+      }
+            int id;
+            public static void main(String[] a){
+                        Student ob=new Student(); //Line 1
+                        ob.name="abc"; //Line 2
+                        ob.id=123;}
+}
+Select one:
+a. In Student class In Person class
+b. In Person class In Student class
+c. Compilation error in Line 2
+d. In Student class
+
+//
+What will be the output of the below code snippet?
+
+class Loan{
+             Loan(){
+                            System.out.println("Request for loan");
+             }
+}
+class HomeLoan extends Loan{
+              public static void main(String[] args){
+                         HomeLoan obh=new HomeLoan();
+              }
+}
+Select one:
+a. Request for loan
+b. Executes successfully, with no output displayed
+c. Runtime exception
+d. compilation error as child class also should have a constructor, with super() in it
+
+//
+
+Consider the following code inside Account.java file
+class Person{
+             String name;
+             Person(){
+                           name="John";
+             }
+}
+class Employee extends Person{
+               int age;
+               Employee(){
+                               age=34;
+                }
+}
+class Customer extends Person{
+              int salary;
+              Customer(int salary){
+                              this.salary=salary;
+                     name="Maddy";
+               }
+                             public void displayDetails(){
+                             System.out.println(name+age+salary);
+               }
+}
+class Account {
+       public static void main(String[] args) {
+                       Customer c=new Customer(20000);
+                       c.displayDetails();
+            }
+}
+What will happen when the code is executed?
+Select one:
+a. Compilation fail “Person cannot have two child classes i.e. Employee and Customer”
+b. Code executes successfully and display “Maddy3420000”
+c. Compilation fail “the variable age is not accessible from displayDetails method ”
+d. Code executes successfully and display “John3420000”
+
+//
+What will be the output of the following code snippet?
+class Loan{
+              int i;
+              Loan(int x){
+                           i=x;
+                          System.out.println("Request for loan");}
+
+}
+class HomeLoan extends Loan{
+               int i;
+               HomeLoan(){
+                  super(10);
+                          i=super.i;
+                         System.out.println("Request for homeloan"+i);
+       }
+       public static void main(String[] args){
+                        HomeLoan obh=new HomeLoan();
+       }
+}
+Select one:
+a. executes successfully, with no output displayed
+b. Request for loan Request for homeloan 10
+c. compilation error due to super.i statement
+d. Runtime exception
+
+//
+
+Bank application starts with a login screen. If the username=”John” and password="Infy123", We need to display the message as “Welcome!” else we need to display "Sorry, wrong credentials!". What is the right way to do it?
+Select one:
+a. if (username. equals("John") &amp;&amp; password. equals("Infy123")) System.out.println ("Welcome!"); else System.out.println ("Sorry, wrong credentials!");
+b. both option 1 and option 2
+c. None of the option
+d. String s = (username. equals (”John”) &amp;&amp; password. equals("Infy123"))? "Welcome!”: "Sorry, wrong credentials!”; System.out.println(s);
+
+//
+Which of the following is true regarding JVM?
+Select one:
+a. JVM compiles the bytecode, converts it into native code, and then executes the native code
+b. None of the above
+c. JVM directly passes the bytecode to the processor, and as a result the code is executed
+d. JVM is platform-independent
+
+//
+
+Consider the following code:
+class Demo{
+              public static void main(String[] args){
+                          int i = 1,j = -1;
+                          switch (i) {
+                          case 0, 1:
+                                       j = 1;
+                          case 2:
+                                       j = 2;
+                          default:
+                                       j = 0;
+                          }
+                         System.out.printIn("j="+j);
+                }
+}
+What will happen on executing the code?
+Select one:
+a. j = 1
+b. j = -1
+c. Compilation fails
+d. j = 0
+
+//
+
+Consider the following code inside the Demo.java file:
+public class Demo{
+            private static void main(String[] args){
+                        System.out.println("Hello World");
+            }
+}
+What happens, when the program executes?
+Select one:
+a. Runtime exception
+b. Compilation error
+c. Display “Hello World”
+d. No output will be generated
+
+//
+
+John is writing a class to handle the Account holder details. It requires two important variables as name and mobileNumber. For name, he has taken the datatype as String. For mobileNumber what should be the datatype?
+Select one:
+a. char
+b. float
+c. long
+d. int
+
+//
+
+Which of the following is proper declaration of a final method in Java?
+Select one:
+a. public void final method() { }
+b. final public void method();
+c. public final method();
+d. public final void method(){ }
+
+//
+
+John and his teammate Paul are working on a Java project. John is working on a Windows machine whereas Paul is working on a Mac machine.
+Which feature of Java helps John and Paul’s projects to execute on each other’s machines, even though they are working in different environments?
+Select one:
+a. Architecture neutral and portable
+b. Memory management
+c. Multithreading
+d. Object oriented
+
+//
+
+Consider the following code inside Bank.java file:
+class Bank {
+              String bankName, area, phoneNo;
+
+              bank(){
+                            System.out.println("Banking application");
+               }
+
+               public static void main(String[] args) {
+                           Bank bank = new Bank();
+                           System.out.println(bank.bankName);
+               }
+}
+What happens, when the program executes?
+Select one:
+a. Compile time error as the bank() method doesn’t have return type specified
+b. Compile time error as the constructor name and class name are not same
+c. Print “Banking application ” null
+d. Print null
+
+//
+
+Consider the following code inside ABCBank.java file
+class ABCBank{
+              int phone;
+              double getPhone(){
+                              System.out.println("phone number received");
+                              return phone;
+              }
+}
+What happens, when the program executes?
+Select one:
+a. The code will not compile as the return type in the getPhone method should be int not double
+b. The code will compile successfully and generate ABCBank.java file
+c. The code will compile successfully and generate ABCBank.class file
+d. The code will not compile as there is no main method
+
+//
+Consider the following code inside Bank.java file:
+class Bank{
+             String bankName,area,phoneNo;
+             public static void main(String[] args){
+                         Bank bank=new Bank();
+                         System.out.println(bank.bankName);
+                         Bank bank2=new Bank("abc","xyz","pqr");
+                         System.out.println(bank2.bankName);
+             }
+             Bank(){
+                          System.out.println("inside constructor");
+             }
+             Bank(String x,String y,String z){
+                           bankName=x;
+                           area=y;
+                           phoneNo=z;
+             }
+}
+What will be the output when we run the code?
+Select one:
+a. print “abc” but with Runtime exception
+b. Runtime exception as none of the variables are initialized
+c. inside constructor null abc
+d. null abc
+
+//
+
+What is the output for the following program?
+class ArrayProgram {
+            public static void main(String[] args)
+                   {
+                        int myArr[] = new int[] {0 , 1, 2, 3, 4, 5, 6, 7, 8, 9};
+                        int n = 6;
+                        n = myArr[myArr[n] / 2];
+                        System.out.println(myArr[n] / 2);
+                   }
+}
+Select one:
+a. 1
+b. 6
+c. 0
+d. 3
+
